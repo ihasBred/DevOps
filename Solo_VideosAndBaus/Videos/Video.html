@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Vlog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../Assets/Icons/gigi.jpg">
+</head>
+<body>
+  <div id="preloader">
+    <video autoplay muted playsinline id="preloadVideo">
+      <source src="../Assets/murinLoader.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div id="main" class="hidden">
+    <nav class="navbar">
+      <div class="nav-left">
+        <h2>Grem Media</h2>
+      </div>
+      <div class="nav-right">
+        <a href="../Project.html" class="back-btn">
+          <img src="../Assets/Icons/home.png" alt="Back" />
+        </a>
+      </div>
+    </nav>
+
+    <div class="content">
+      <div class="main-layout">
+        <div class="video-section">
+          <div class="video">
+            <video controls poster="../Assets/Icons/goldShip.jpg">
+              <source src="../Assets/Video/uma.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="description">
+            <h1 Align="center">-Umamusume Run ft. Gold Ship-</h1>
+            <hr>
+            <div class="desc-layout">
+              <div class="desc-text">
+                <p>I had no idea what to vlog...</p>
+                <p>Boat goes binted.</p>
+                <p>Here is Gigi Murin -></p>
+                </div>
+                <div class="desc-video">
+                  <video autoplay muted loop>
+                    <source src="../Assets/Video/gVibe.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      const main = document.getElementById("main");
+
+      preloader.classList.add("fade-out");
+      main.classList.remove("hidden");
+      main.classList.add("fade-in");
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 1000);
+    }, 2000);
+  </script>
+</body>
+</html>
