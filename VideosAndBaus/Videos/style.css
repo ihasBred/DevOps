@@ -1,0 +1,173 @@
+/* Reset body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.nav-right .back-btn img {
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.nav-right .back-btn img:hover {
+  transform: scale(1.1);
+}
+
+/* Content layout */
+.content {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.main-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Video section */
+.video-section {
+  flex: 3;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.video video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.description {
+  margin-top: 15px;
+}
+
+.description h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.description p {
+  color: #ddd;
+}
+
+/* Playlist section */
+.list {
+  flex: 1.2;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.list h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  margin: 8px 0;
+}
+
+.list a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.2s, border 0.2s;
+  padding: 4px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.list a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.list a.active {
+  border: 2px solid #007BFF;
+  background: rgba(0, 123, 255, 0.2);
+}
+
+.list img {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.list span {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #cce6fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+}
+
+#preloader video {
+  max-width: 600px; 
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
