@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAVORITE MUSIC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="video-background">
+
+
+  <div class="video-background">
+    <video autoplay loop pause playsinline>
+      <source src="vecteezy_pink-and-blue-circle-light-cyber-tunnel-loop_3155060.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="song-item" data-video="BTS (방탄소년단) '작은 것들을 위한 시 (Boy With Luv) (feat. Halsey)' Official MV..mp4">
+        <video src="BTS (방탄소년단) '작은 것들을 위한 시 (Boy With Luv) (feat. Halsey)' Official MV..mp4" muted loop autoplay playsinline></video>
+        <p>Boy With Luv - BTS</p>
+      </div>
+
+      <div class="song-item" data-video="ENHYPEN (엔하이픈) 'Bad Desire (With or Without You)' Official MV..mp4">
+        <video src="ENHYPEN (엔하이픈) 'Bad Desire (With or Without You)' Official MV..mp4" muted loop autoplay playsinline></video>
+        <p>Bad Desire - Enhypen</p>
+      </div>
+
+      <div class="song-item" data-video="EXO-K (엑소케이) - MAMA (마마) (Color Coded Han_Rom_Eng Lyrics)..mp4">
+        <video src="EXO-K (엑소케이) - MAMA (마마) (Color Coded Han_Rom_Eng Lyrics)..mp4" muted loop autoplay playsinline></video>
+        <p>MAMA - EXO</p>
+      </div>
+
+      <div class="song-item" data-video="_Soda Pop_ Official Lyric Video _ KPop Demon Hunters _ Sony Animation..mp4">
+        <video src="_Soda Pop_ Official Lyric Video _ KPop Demon Hunters _ Sony Animation..mp4" muted loop autoplay playsinline></video>
+        <p>Soda Pop</p>
+      </div>
+
+      <div class="song-item" data-video="Multo - Cup of Joe (Lyrics)..mp4">
+        <video src="Multo - Cup of Joe (Lyrics)..mp4" muted loop autoplay playsinline></video>
+        <p>MULTO - Cup of Joe</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="fullscreen-player" id="fullscreen-player">
+    <video id="main-video" controls></video>
+    <a href="#" id="back-btn" class="neon-btn">X</a>
+  </div>
+      <div>
+  <a href="DevOps.html" id="home-btn" class="neon-btn">Back Home</a>
+    </div>
+  <script>
+    const songs = document.querySelectorAll('.song-item');
+    const fullscreenPlayer = document.getElementById('fullscreen-player');
+    const mainVideo = document.getElementById('main-video');
+    const backBtn = document.getElementById('back-btn');
+    const carousel = document.querySelector('.carousel');
+
+  
+    songs.forEach(item => {
+      item.addEventListener('click', () => {
+        const videoSrc = item.getAttribute('data-video');
+        mainVideo.src = videoSrc;
+        fullscreenPlayer.style.display = 'flex';
+        mainVideo.play();
+        carousel.style.animationPlayState = 'paused';
+      });
+    });
+
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      fullscreenPlayer.style.display = 'none';
+      mainVideo.pause();
+      mainVideo.src = "";
+      carousel.style.animationPlayState = 'running';
+    });
+  </script>
+</body>
+</html>
